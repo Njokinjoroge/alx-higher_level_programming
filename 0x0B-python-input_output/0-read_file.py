@@ -1,17 +1,8 @@
 #!/usr/bin/python3
-Rectangle = __import__('8-rectangle').Rectangle
+"""This module defines a text file-reading function"""
 
-r = Rectangle(3, 5)
 
-print(r)
-print(dir(r))
-
-try:
-    print("Rectangle: {} - {}".format(r.width, r.height))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    r2 = Rectangle(4, True)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+def read_file(filename=""):
+    """Prints the contents of a UTF8 text file"""
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
